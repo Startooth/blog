@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block head %}
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="/article/index">Home</a></li>
+    <li role="presentation"><a href="/user/info">Private</a></li>
+    <li role="presentation"><a href="/article/post">Blog</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<h1>我的Blog</h1>
+<table>
+    {% for article in articles %}
+    <tr>
+        <td><a href="/article/read?aid={{ article.id }}">{{ article.title }}</a></td>
+        <td>{{ article.date }}</td>
+    </tr>
+    {% else %}
+    <p>这个人很懒，什么都没写呢...</p>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BASE</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <style>
+        * {
+            font-family: 微软雅黑;
+            font-size: 20px
+        }
+
+        .head {
+            background-color: black;
+            color: white;
+            height: 50px;
+            width: 100%;
+            margin-bottom: 20px
+        }
+
+        .body {
+            height: 600px;
+            width: 1200px;
+            margin: auto;
+        }
+
+        .content {
+            float: left;
+            /*background-color: lightblue;*/
+            height: 500px;
+            width: 70%;
+            padding-top: 50px;
+            margin-right: 60px;
+        }
+
+        .side {
+            float: left;
+            height: 550px;
+            width: 25%;
+        }
+
+        .foot {
+            clear: both;
+            background-color: darkslateblue;
+            height: 50px;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        {% block head %}
+        {% endblock %}
+    </div>
+    <div class="body">
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="side">
+            {% block side %}
+            {% endblock %}
+        </div>
+    </div>
+    <div class="foot" style="color: white">
+        <p style="font-size: 20px">一个没有想好写什么的底栏...</p>
+    </div>
+</body>
+
+</html>

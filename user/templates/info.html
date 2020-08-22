@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block head %}
+<ul class="nav nav-tabs">
+    <li role="presentation" ><a href="/article/index">Home</a></li>
+    <li role="presentation" class="active"><a href="/user/info">Private</a></li>
+    <li role="presentation"><a href="/article/post">Blog</a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div style="float: left;width: 50%;">
+    <table>
+        <tr><td align="center">
+            {% if user.photo != 0 %}
+            <img src="/static/img/{{ user.username }}.jpg">
+            {% else %}
+            <img style="width: 50%;" src="/static/img/default.jfif">
+            {% endif %}
+        </td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center">{{ user.username }}</td></tr>
+    </table>
+</div>
+<div style="float: left;width: 50%;">
+    <table class='table table-hover'>
+        <tr class="success">
+            <td>未选择1</td>
+        </tr>
+        <tr>
+            <td>未选择2</td>
+        </tr>
+        <tr class="success">
+            <td>未选择3</td>
+        </tr>
+        <tr>
+            <td>未选择4</td>
+        </tr>
+        <tr class="success">
+            <td>未选择5</td>
+        </tr>
+    </table>
+</div>
+
+{% endblock %}

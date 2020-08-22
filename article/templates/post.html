@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block head %}
+<ul class="nav nav-tabs">
+    <li role="presentation"><a href="/article/index">Home</a></li>
+    <li role="presentation"><a href="/user/info">Private</a></li>
+    <li role="presentation" class="active"><a href="/article/post">Blog</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<h1>写文章</h1>
+<form action="/article/post" method="POST">
+    <div style="margin-bottom: 10px;">
+        <lable>标题</lable>
+        <input type="text" class="form-control" name='title'>
+    </div>
+    <div style="margin-bottom: 10px;">
+        <lable>内容</lable>
+        <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-default" value="完成">
+    </div>
+</form>
+{% endblock %}
