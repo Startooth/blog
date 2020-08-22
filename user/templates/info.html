@@ -11,32 +11,42 @@
     <table>
         <tr><td align="center">
             {% if user.photo != 0 %}
-            <img src="/static/img/{{ user.username }}.jpg">
+            <img style="width: 50%;border-radius: 100px;" src="static/img/{{ user.username }}.jpg">
             {% else %}
-            <img style="width: 50%;" src="/static/img/default.jfif">
+            <img style="width: 50%;border-radius: 100px;" src="static/img/default.jfif">
             {% endif %}
+        </td></tr>
+        <tr><td align="center">
+            <a href="/user/modify?uid={{ user.uid }}">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
         </td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td align="center">{{ user.username }}</td></tr>
     </table>
 </div>
 <div style="float: left;width: 50%;">
+    <h1>我的最近更新</h1>
     <table class='table table-hover'>
+        {% for item in data %}
+        <tr><td><a href="/user/read?username={{ item.username }}&date={{ item.date }}">{{ item.title }}</a></td></tr>
+        {% else %}
         <tr class="success">
-            <td>未选择1</td>
+            <td></td>
         </tr>
         <tr>
-            <td>未选择2</td>
+            <td></td>
         </tr>
         <tr class="success">
-            <td>未选择3</td>
+            <td></td>
         </tr>
         <tr>
-            <td>未选择4</td>
+            <td></td>
         </tr>
         <tr class="success">
-            <td>未选择5</td>
+            <td></td>
         </tr>
+        {% endfor %}
     </table>
 </div>
 

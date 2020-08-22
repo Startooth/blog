@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ article.title }}</h1>
-<pre>
-    {{ article.content }}
-</pre>
-<a href="/article/delete?aid={{ article.id }}">删除该文章</a>
+<div style="width: 80%;height: 80%;">
+    <h1>{{ article.title }}</h1>
+    <p class="lead">
+        {{ article.content }}
+    </p>
+</div>
+<div style="float: right;">
+    <p>{{ article.username }}</p>
+    <p>{{ article.date }}</p>
+</div>
+
 {% endblock %}

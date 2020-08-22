@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="width: 50%;">
+    <h1>修改用户信息</h1>
+    <table class='table'>
+        <form action="/user/modify" method="POST" enctype="multipart/form-data">
+            <tr>
+                <td>用户名</td>
+                <td><input type="text" class="form-control" name='username' value='{{ user.username }}'></td>
+            </tr>
+            <tr>
+                <td>密码</td>
+                <td><input type="password" class="form-control" name='password' value='{{ user.password }}'></td>
+            </tr>
+            <tr>
+                <td>性别</td>
+                <td>
+                    <label class="checkbox-inline">男</label>
+                    <input type="radio" name='gender' value='男' {% if user.gender=='男' %} checked {% endif %}>
+                    <label class="checkbox-inline">女</label>
+                    <input type="radio" name='gender' value='女' {% if user.gender=='女' %} checked {% endif %}>
+                    <label class="checkbox-inline">保密</label>
+                    <input type="radio" name='gender' value='保密' {% if user.gender=='保密' %} checked {% endif %}>
+                </td>
+            </tr>
+            <tr>
+                <td>手机号</td>
+                <td><input type="text" class="form-control" name='phone' value='{{ user.phone }}'></td>
+            </tr>
+            <tr>
+                <td align="center" colspan=2><input type="file" name="photo"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan=2><input type="submit" class="btn btn-default" value="完成修改"></td>
+            </tr>
+        </form>
+    </table>
+</div>
+{% endblock %}

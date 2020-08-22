@@ -8,15 +8,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>我的Blog</h1>
-<table>
+<h1>交流社区</h1>
+<table class="table table-striped">
     {% for article in articles %}
     <tr>
         <td><a href="/article/read?aid={{ article.id }}">{{ article.title }}</a></td>
+        <td>{{ article.username }}</td>
         <td>{{ article.date }}</td>
     </tr>
     {% else %}
-    <p>这个人很懒，什么都没写呢...</p>
+    <p>社区空空如也，快来动笔写一写吧</p>
     {% endfor %}
 </table>
 {% endblock %}

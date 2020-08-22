@@ -3,5 +3,7 @@
 <h1>{{ msg }}</h1>
 {% if msg=='注册成功！' %}
 <a href="/user/login">跳转到登陆页面</a>
+{% elif msg=='修改成功' %}
+<a href="/user/info">跳转到用户信息页面</a>
 {% endif %}
 {% endblock %}

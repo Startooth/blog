@@ -10,7 +10,7 @@ from article.views import article_bp
 
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://wizard:123@localhost:3306/Blog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:zysqwxfx0714@localhost:3306/Blog'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db.init_app(app)

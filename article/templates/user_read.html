@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div style="width: 80%;height: 80%;">
+    <h1>{{ data.title }}</h1>
+    <p class="lead">
+        {{ data.content }}
+    </p>
+</div>
+<div style="float: right;">
+    <a href="/article/delete?aid={{ data.id }}"><button class="btn btn-default">删除该文章</button></a>
+</div>
+
+{% endblock %}
