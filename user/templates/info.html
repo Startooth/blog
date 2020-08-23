@@ -7,13 +7,13 @@
 </ul>
 {% endblock %}
 {% block content %}
-<div style="float: left;width: 50%;">
+<div style="float: left;width: 40%;">
     <table>
         <tr><td align="center">
             {% if user.photo != 0 %}
-            <img style="width: 50%;border-radius: 100px;" src="static/img/{{ user.username }}.jpg">
+            <img style="width: 200px;height:200px;border-radius: 100px;" src="static/img/{{ user.username }}.jpg">
             {% else %}
-            <img style="width: 50%;border-radius: 100px;" src="static/img/default.jfif">
+            <img style="width: 200px;height:200px;border-radius: 100px;" src="static/img/default.jfif">
             {% endif %}
         </td></tr>
         <tr><td align="center">
@@ -23,9 +23,13 @@
         </td></tr>
         <tr><td>&nbsp;</td></tr>
         <tr><td align="center">{{ user.username }}</td></tr>
+        <tr><td>&nbsp;</td></tr>
+        <tr><td align="center">
+            <a href="/user/logout"><button class="btn btn-default">退出登陆</button></a>
+        </td></tr>
     </table>
 </div>
-<div style="float: left;width: 50%;">
+<div style="float: left;width: 40%;">
     <h1>我的最近更新</h1>
     <table class='table table-hover'>
         {% for item in data %}

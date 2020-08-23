@@ -8,18 +8,20 @@
 {% endblock %}
 
 {% block content %}
-<h1>写文章</h1>
-<form action="/article/post" method="POST">
-    <div style="margin-bottom: 10px;">
-        <lable>标题</lable>
-        <input type="text" class="form-control" name='title'>
-    </div>
-    <div style="margin-bottom: 10px;">
-        <lable>内容</lable>
-        <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
-    </div>
-    <div>
-        <input type="submit" class="btn btn-default" value="完成">
-    </div>
-</form>
+<div style="width: 60%;margin:auto">
+    <h1>我的Blog</h1>
+    <form action="/article/post" method="POST">
+        <div style="margin-bottom: 10px;">
+            <lable>标题</lable>
+            <input type="text" class="form-control" name='title'>
+        </div>
+        <div style="margin-bottom: 10px;">
+            <lable>内容</lable>
+            <textarea class="form-control" name="content" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn btn-default" value="发布">
+        </div>
+    </form>
+</div>
 {% endblock %}

@@ -116,4 +116,10 @@ def read():
         return render_template('response.html', msg='请先登录！')
 
 
+@user_bp.route('/logout')
+def logout():
+    '''退出登陆'''
+    session.pop('username')
+    return redirect('/user/login')
+
 
